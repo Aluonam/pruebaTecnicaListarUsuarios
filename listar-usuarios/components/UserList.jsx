@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import ModalUserData from './ModalUserData'
 
 const UserList = () => {
 
@@ -21,6 +22,7 @@ const UserList = () => {
         return(
             <div key={actualElement.id.value}>
                 {actualElement.name.first} {actualElement.name.last}
+                <ModalUserData persona={actualElement}></ModalUserData>
             </div>
         )
     })
