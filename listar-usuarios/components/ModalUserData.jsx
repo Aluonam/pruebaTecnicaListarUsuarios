@@ -10,18 +10,24 @@ const ModalUserData = ({persona}) => {
   const handleOk = () => {
     setIsModalOpen(false);
   };
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
+  
   return (
     <>
       <Button type="primary" onClick={showModal}>
         Detalles
       </Button>
-      <Modal title={persona.name.first} open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+      <Modal title={persona.name.first} open={isModalOpen} onOk={handleOk} style={{textAlign:"center"}} onCancel={handleOk}
+      footer={[
+        <Button  onClick={handleOk}>
+            ok
+          </Button>
+      ]}
+      >
+        <img src={persona.picture.medium}></img>
+        <p>{persona.email}</p>
+        <p>{persona.dob.age}</p>
+        <p>{persona.login.username}</p>
+
       </Modal>
     </>
   );
