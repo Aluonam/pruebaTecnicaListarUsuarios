@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Button, Modal } from 'antd';
+import NextUser from './NextUser';
 
 
-const ModalUserData = ({persona}) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+const ModalUserData = ({persona, consumoAPI}) => {
+  const [isModalOpen, setIsModalOpen] = useState();
   const showModal = () => {
     setIsModalOpen(true);
   };
@@ -27,6 +28,7 @@ const ModalUserData = ({persona}) => {
         <p>{persona.email}</p>
         <p>{persona.dob.age}</p>
         <p>{persona.login.username}</p>
+        <NextUser consumoAPI={consumoAPI}></NextUser>
 
       </Modal>
     </>
